@@ -1,0 +1,116 @@
+add_newline = true
+
+[battery]
+full_symbol = ""
+charging_symbol = ""
+discharging_symbol = ""
+disabled = false
+format = "[$symbol$percentage ]($style)"
+
+[[battery.display]]
+style = "red"
+threshold = 10
+
+[[battery.display]]
+style = "yellow"
+threshold = 30
+
+[[battery.display]]
+style = "white"
+threshold = 89
+
+[[battery.display]]
+style = "green"
+threshold = 90
+
+[character]
+symbol = "$symbol "
+use_symbol_for_status = true
+
+[cmd_duration]
+format = "took [$duration]($style)"
+min_time = 0
+
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style) "
+truncate_to_repo = true
+
+[hostname]
+disabled = false
+ssh_only = false
+
+[line_break]
+disabled = false
+
+[username]
+disabled = false
+show_always = true
+
+[aws]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "
