@@ -5,7 +5,7 @@ full_symbol = ""
 charging_symbol = ""
 discharging_symbol = ""
 disabled = false
-format = "[$symbol$percentage ]($style)"
+format = "[$symbol $percentage ]($style)"
 
 [[battery.display]]
 style = "red"
@@ -22,6 +22,10 @@ threshold = 89
 [[battery.display]]
 style = "green"
 threshold = 90
+
+[[battery.display]]
+style = "bold green"
+threshold = 100
 
 [character]
 symbol = "$symbol "
@@ -81,9 +85,6 @@ symbol = " "
 
 [julia]
 symbol = " "
-
-[memory_usage]
-symbol = " "
 
 [nim]
 symbol = " "
