@@ -32,22 +32,22 @@ end
 
 if not type -q fisher
     printf "⌛ Install fisher\n"
-    curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher > /dev/null
-    printf "\033[A\33[2K\r✅ Install fisher\n"
+    curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher
+    printf "✅ Install fisher\n"
 end
 
 printf "⌛ Install fish packages\n"
-cat "$rootDir/fisher-plugins" | fisher install > /dev/null
-printf "\033[A\33[2K\r✅ Install fish packages\n"
+cat "$rootDir/fisher-plugins" | fisher install
+printf "✅ Install fish packages\n"
 
 printf "⌛ Install nodejs lts\n"
-nvm install lts > /dev/null
-nvm use lts > /dev/null
-printf "\033[A\33[2K\r✅ Install nodejs\n"
+nvm install lts
+nvm use lts
+printf "✅ Install nodejs\n"
 
 printf "⌛ Placing dot files\n"
 _placeFiles $files ~
-printf "\033[A\33[2K\r✅ Placing dot files\n"
+printf "✅ Placing dot files\n"
 
 set_color yellow
 echo "⚠ Please dot source config file like: . ~/.config/fish/config.fish"
