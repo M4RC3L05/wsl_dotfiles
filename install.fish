@@ -30,12 +30,6 @@ function _placeFiles
     end
 end
 
-if not type -q starship
-    printf "⌛ Install starship\n"
-    curl -fsSL https://starship.rs/install.sh | bash > /dev/null
-    printf "\033[A\33[2K\r✅ Install starship\n"
-end
-
 if not type -q fisher
     printf "⌛ Install fisher\n"
     curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher > /dev/null
@@ -48,6 +42,7 @@ printf "\033[A\33[2K\r✅ Install fish packages\n"
 
 printf "⌛ Install nodejs lts\n"
 nvm install lts > /dev/null
+nvm use lts > /dev/null
 printf "\033[A\33[2K\r✅ Install nodejs\n"
 
 printf "⌛ Placing dot files\n"
