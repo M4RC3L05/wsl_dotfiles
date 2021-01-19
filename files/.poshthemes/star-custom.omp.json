@@ -8,20 +8,28 @@
         "type": "prompt",
         "alignment": "left",
         "segments": [
+            {
+                "type": "exit",
+                "style": "plain",
+                "foreground": "#C94A16",
+                "properties": {
+                  "prefix": "x",
+                  "display_exit_code": false
+                }
+              },
           {
             "type": "root",
             "style": "plain",
-            "foreground": "#E06C75",
+            "foreground": "#FFEE58",
             "properties": {
-              "root_icon": "root",
               "prefix": "",
-              "postfix": " <#ffffff>in</> "
+              "postfix": " <#ffffff>root in</> "
             }
           },
           {
             "type": "path",
             "style": "plain",
-            "foreground": "#55B9C4",
+            "foreground": "#2FC4DE",
             "properties": {
               "style": "folder",
               "prefix": ""
@@ -30,7 +38,7 @@
           {
             "type": "git",
             "style": "plain",
-            "foreground": "#C678DD",
+            "foreground": "#3FDA98",
             "properties": {
                 "display_stash_count": true,
                 "display_upstream_icon": true,
@@ -52,15 +60,6 @@
             "properties": {
               "display_version": true,
               "prefix": "<#ffffff>via</> \uE781 "
-            }
-          },
-          {
-            "type": "exit",
-            "style": "plain",
-            "foreground": "#C94A16",
-            "properties": {
-              "prefix": "x",
-              "display_exit_code": false
             }
           },
           {
