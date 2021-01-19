@@ -30,6 +30,19 @@ function _placeFiles
     end
 end
 
+if not type -q oh-my-posh
+    printf "⌛ Install oh-my-posh\n"
+    sudo wget https://github.com/JanDeDobbeleer/oh-my-posh3/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
+    sudo chmod +x /usr/local/bin/oh-my-posh
+
+    mkdir ~/.poshthemes
+    wget https://github.com/JanDeDobbeleer/oh-my-posh3/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
+    unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
+    chmod u+rw ~/.poshthemes/*.json
+    rm ~/.poshthemes/themes.zip
+    printf "✅ Install oh-my-posh\n"
+end
+
 if not type -q fisher
     printf "⌛ Install fisher\n"
     curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher
@@ -50,5 +63,5 @@ _placeFiles $files ~
 printf "✅ Placing dot files\n"
 
 set_color yellow
-echo "⚠ Please dot source config file like: . ~/.config/fish/config.fish"
+echo "⚠ Please restart the terminal."
 set_color normal

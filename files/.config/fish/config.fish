@@ -27,3 +27,4 @@ set -g fish_color_user brgreen
 set -g fish_color_valid_path --underline
 
 # starship init fish | source
+oh-my-posh --init --shell fish --config ~/.poshthemes/star-custom.omp.json | source
