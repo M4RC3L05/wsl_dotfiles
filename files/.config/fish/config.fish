@@ -26,5 +26,9 @@ set -g fish_color_selection 'white' '--bold' '--background=brblack'
 set -g fish_color_user brgreen
 set -g fish_color_valid_path --underline
 
+if not type -q node
+    nvm use lts > /dev/null
+end
+
 # starship init fish | source
 oh-my-posh --init --shell fish --config ~/.poshthemes/star-custom.omp.json | source
