@@ -26,6 +26,13 @@ set -g fish_color_selection 'white' '--bold' '--background=brblack'
 set -g fish_color_user brgreen
 set -g fish_color_valid_path --underline
 
+# code 
+set -x PATH "/mnt/c/Users/joaob/AppData/Local/Programs/Microsoft VS Code Insiders/bin" $PATH 
+
+# docker
+set -x PATH "/mnt/c/Program Files/Docker/Docker/resources/bin" $PATH 
+set -x PATH /mnt/c/ProgramData/DockerDesktop/version-bin $PATH 
+
 if not type -q node
     nvm use lts > /dev/null
 end
