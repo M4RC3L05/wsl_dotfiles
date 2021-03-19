@@ -26,19 +26,19 @@ set -g fish_color_selection 'white' '--bold' '--background=brblack'
 set -g fish_color_user brgreen
 set -g fish_color_valid_path --underline
 
+# Hydro
+set -g hydro_color_pwd green
+set -g hydro_color_git brblack
+set -g hydro_color_error red
+set -g hydro_color_prompt magenta
+set -g hydro_color_duration yellow
+
 # code 
 set -x PATH "/mnt/c/Users/joaob/AppData/Local/Programs/Microsoft VS Code Insiders/bin" $PATH
 
 # docker
 set -x PATH "/mnt/c/Program Files/Docker/Docker/resources/bin" $PATH
 set -x PATH /mnt/c/ProgramData/DockerDesktop/version-bin $PATH
-
-if not type -q node
-    nvm use lts >/dev/null
-end
-
-# starship init fish | source
-oh-my-posh --init --shell fish --config ~/.poshthemes/star-custom.omp.json | source
 
 # GWSL
 set --export WSL2 1
