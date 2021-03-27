@@ -40,6 +40,12 @@ set -x PATH "/mnt/c/Users/joaob/AppData/Local/Programs/Microsoft VS Code Insider
 set -x PATH "/mnt/c/Program Files/Docker/Docker/resources/bin" $PATH
 set -x PATH /mnt/c/ProgramData/DockerDesktop/version-bin $PATH
 
+# skaffold
+set -x PATH /mnt/c/Users/joaob/scoop/apps/skaffold/current $PATH
+
+# helm
+set -x PATH /mnt/c/Users/joaob/scoop/apps/helm/current $PATH
+
 # GWSL
 set --export WSL2 1
 set ipconfig_exec (wslpath "C:\\Windows\\System32\\ipconfig.exe")
@@ -59,3 +65,8 @@ end
 
 set -e wsl2_d_tmp
 set -e ipconfig_exec
+
+# Autoloading
+if not type -q node
+    nvm install lts
+end
