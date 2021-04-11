@@ -1,10 +1,7 @@
 set fish_greeting
 
-# Load all saved ssh keys
-/usr/bin/ssh-add -A ^/dev/null
-
 # Fish syntax highlighting
-set -g fish_color_autosuggestion '555' 'brblack'
+set -g fish_color_autosuggestion 555 brblack
 set -g fish_color_cancel -r
 set -g fish_color_command --bold
 set -g fish_color_comment red
@@ -12,7 +9,7 @@ set -g fish_color_cwd green
 set -g fish_color_cwd_root red
 set -g fish_color_end brmagenta
 set -g fish_color_error brred
-set -g fish_color_escape 'bryellow' '--bold'
+set -g fish_color_escape bryellow --bold
 set -g fish_color_history_current --bold
 set -g fish_color_host normal
 set -g fish_color_match --background=brblue
@@ -21,8 +18,8 @@ set -g fish_color_operator bryellow
 set -g fish_color_param cyan
 set -g fish_color_quote yellow
 set -g fish_color_redirection brblue
-set -g fish_color_search_match 'bryellow' '--background=brblack'
-set -g fish_color_selection 'white' '--bold' '--background=brblack'
+set -g fish_color_search_match bryellow '--background=brblack'
+set -g fish_color_selection white --bold '--background=brblack'
 set -g fish_color_user brgreen
 set -g fish_color_valid_path --underline
 
@@ -34,17 +31,29 @@ set -g hydro_color_prompt magenta
 set -g hydro_color_duration yellow
 
 # code 
-set -x PATH "/mnt/c/Users/joaob/AppData/Local/Programs/Microsoft VS Code Insiders/bin" $PATH
+fish_add_path "/mnt/c/Users/joaob/AppData/Local/Programs/Microsoft VS Code Insiders/bin"
 
 # docker
-set -x PATH "/mnt/c/Program Files/Docker/Docker/resources/bin" $PATH
-set -x PATH /mnt/c/ProgramData/DockerDesktop/version-bin $PATH
+fish_add_path "/mnt/c/Program Files/Docker/Docker/resources/bin"
+fish_add_path /mnt/c/ProgramData/DockerDesktop/version-bin
 
 # skaffold
-set -x PATH /mnt/c/Users/joaob/scoop/apps/skaffold/current $PATH
+fish_add_path /mnt/c/Users/joaob/scoop/apps/skaffold/current
 
-# helm
-set -x PATH /mnt/c/Users/joaob/scoop/apps/helm/current $PATH
+# brew
+fish_add_path /home/linuxbrew/.linuxbrew/bin
+fish_add_path /home/linuxbrew/.linuxbrew/sbin
+
+if test -d (brew --prefix)"/share/fish/completions"
+    set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/completions
+end
+
+if test -d (brew --prefix)"/share/fish/vendor_completions.d"
+    set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
+end
+
+# deno dvm
+fish_add_path /home/m4rc3l05/.deno/bin
 
 # GWSL
 set --export WSL2 1
@@ -66,7 +75,6 @@ end
 set -e wsl2_d_tmp
 set -e ipconfig_exec
 
-# Autoloading
 if not type -q node
-    nvm install lts
+    nvm install lts >/dev/null
 end

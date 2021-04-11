@@ -1,10 +1,8 @@
-jorgebucaran/fisher
-jorgebucaran/fish-nvm
 danhper/fish-ssh-agent
 jorgebucaran/autopair.fish
-gazorby/fish-abbreviation-tips
 jorgebucaran/replay.fish
 jorgebucaran/hydro
-oh-my-fish/plugin-node-binpath
 jorgebucaran/humantime.fish
 oh-my-fish/plugin-license
+jorgebucaran/fisher
+patrickf1/colored_man_pages.fish
