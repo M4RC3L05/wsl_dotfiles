@@ -75,6 +75,6 @@ end
 set -e wsl2_d_tmp
 set -e ipconfig_exec
 
-if not type -q node
-    nvm install lts >/dev/null
-end
+# if not type -q node
+#     nvm install lts >/dev/null
+# end
