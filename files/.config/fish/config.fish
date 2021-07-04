@@ -31,29 +31,11 @@ set -g hydro_color_prompt magenta
 set -g hydro_color_duration yellow
 
 # code 
-fish_add_path "/mnt/c/Users/joaob/AppData/Local/Programs/Microsoft VS Code Insiders/bin"
+set fish_user_paths "/mnt/c/Users/joaob/AppData/Local/Programs/Microsoft VS Code Insiders/bin" $fish_user_paths
 
 # docker
-fish_add_path "/mnt/c/Program Files/Docker/Docker/resources/bin"
-fish_add_path /mnt/c/ProgramData/DockerDesktop/version-bin
-
-# skaffold
-fish_add_path /mnt/c/Users/joaob/scoop/apps/skaffold/current
-
-# brew
-fish_add_path /home/linuxbrew/.linuxbrew/bin
-fish_add_path /home/linuxbrew/.linuxbrew/sbin
-
-if test -d (brew --prefix)"/share/fish/completions"
-    set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/completions
-end
-
-if test -d (brew --prefix)"/share/fish/vendor_completions.d"
-    set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
-end
-
-# deno dvm
-fish_add_path /home/m4rc3l05/.deno/bin
+set fish_user_paths "/mnt/c/Program Files/Docker/Docker/resources/bin" $fish_user_paths
+set fish_user_paths /mnt/c/ProgramData/DockerDesktop/version-bin $fish_user_paths
 
 # GWSL
 set --export WSL2 1
@@ -78,3 +60,16 @@ set -e ipconfig_exec
 # if not type -q node
 #     nvm install lts >/dev/null
 # end
+
+# tabtab source for packages
+# uninstall by removing these lines
+[ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true
+
+
+# Aliases
+alias code="_execute_if_available code-insiders"
+alias expose="_execute_if_available npx localtunnel"
+alias serve="_execute_if_available npx http-server"
+alias yalc="_execute_if_available npx yalc"
+alias dc="_execute_if_available docker compose"
+alias dka="_execute_if_available docker kill (docker ps -q)"
