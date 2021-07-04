@@ -44,11 +44,6 @@ printf "⌛ Install fish packages\n"
 fisher update
 printf "✅ Install fish packages\n"
 
-printf "⌛ Install nodejs lts\n"
-nvm install lts
-nvm use lts
-printf "✅ Install nodejs\n"
-
 set_color yellow
 echo "⚠ Please restart the terminal."
 set_color normal
