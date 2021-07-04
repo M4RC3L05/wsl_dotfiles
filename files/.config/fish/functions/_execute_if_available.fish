@@ -1,4 +1,3 @@
-
 function _execute_if_available
     if type -q $argv[1]
         eval $argv[1] $argv[2..-1]
