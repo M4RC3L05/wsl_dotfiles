@@ -1,3 +1,5 @@
+status is-interactive || exit
+
 function _node_binpath_cwd --on-variable PWD
     status --is-command-substitution; and return
 
@@ -14,3 +16,5 @@ function _node_binpath_cwd --on-variable PWD
         and set -e __node_binpath
     end
 end
+
+_node_binpath_cwd $PWD
